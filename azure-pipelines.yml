@@ -15,7 +15,7 @@ steps:
   displayName: 'Azure CLI '
   inputs:
     azureSubscription: 'aml-demo'
-    scriptType: ps
+    scriptType: pscore
     scriptLocation: inlineScript
     inlineScript: |
      
