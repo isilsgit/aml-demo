@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Azure CLI '
+  inputs:
+    azureSubscription: 'aml-demo'
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+     
+     #To install the Machine Learning CLI extension
+     az extension add -n azure-cli-ml
+
+     az ml run submit-pipeline --pipeline-id "ee2730b0-8265-4856-bbd6-b53e6a66"
