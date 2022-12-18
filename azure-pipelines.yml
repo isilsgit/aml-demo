@@ -21,5 +21,6 @@ steps:
      
      #To install the Machine Learning CLI extension
      az extension add -n azure-cli-ml
+     az ml folder attach -w aml-demo -g aml-demo
 
      az ml run submit-pipeline --pipeline-id "ee2730b0-8265-4856-bbd6-b53e6a66"
